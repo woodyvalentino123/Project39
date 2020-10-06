@@ -1,5 +1,6 @@
 class Game{
     constructor(){
+       console.log(allPlayers);
 
     }
     getState() {
@@ -23,7 +24,7 @@ class Game{
                     playerCount = playerCountRef.val();
                     player.getCount();
                 }
-                var form = new Form()
+                var form = new Form();
                 form.display();
             }
     player1 = createSprite(200,500);
@@ -37,10 +38,10 @@ class Game{
 
     
     play(){
-        
+        var form = new Form();
                 form.hide();
-
-                Player.getPlayerInfo();
+              var player = new Player;
+                player.getPlayerInfo();
                  image(back_img, 0, 0, 1000, 800);
                  var x =100;
                  var y=200;
@@ -48,7 +49,8 @@ class Game{
                  drawSprites();
                  for(var plr in allPlayers){
                     
-                    
+                    console.log(plr);
+                    console.log(allPlayers[plr]);
                      index = index+1;
                      x = 500-allPlayers[plr].distance;
                      y=500;
@@ -65,8 +67,7 @@ class Game{
                          
                      }
                     
-                     
-                 
+                                   
                  }
                 
                 if (keyIsDown(RIGHT_ARROW) && player.index !== null) {
@@ -103,9 +104,12 @@ class Game{
                      if(player1.isTouching(fruitGroup) || player2.isTouching(fruitGroup)){
                      if(player1.isTouching(fruitGroup)){
                          player1.destroyEachGroup(fruitGroup);
+                         score = score +1;
+                        
                      }
                      else if(player2.isTouching(fruitGroup)){
                          player2.destroyEachGroup(fruitGroup);
+                         score = score+1
 
                      }
                   }

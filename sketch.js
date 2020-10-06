@@ -26,7 +26,7 @@ function preload(){
 function setup() {
   createCanvas(1000, 600);
   database = firebase.database();
-  game = new Game();
+  var game = new Game();
   game.getState();
   game.start();
   
@@ -34,6 +34,7 @@ function setup() {
 
 function draw() {
   background(back_img);
+  var game = new Game();
   
    if (playerCount === 2) {
      game.update(1);
@@ -46,4 +47,5 @@ function draw() {
     
      game.end();
    }
+  
 }

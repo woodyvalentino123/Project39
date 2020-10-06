@@ -37,6 +37,7 @@ class Form{
             playerCount += 1;
             player.index = playerCount;
             player.update();
+            console.log(playerCount);
             player.updateCount(playerCount);
             this.greeting.html("Hello " + player.name)
             this.greeting.position(400,250);
